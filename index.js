@@ -13,7 +13,7 @@ import { mplex } from "@libp2p/mplex";
 const bootstrapMultiaddrs = [
 	"/ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
 	"/dnsaddr/bootstrap.libp2p.io/ipfs/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
-	"/dnsaddr/bootstrap.libp2p.io/ipfs/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa",
+	// "/dnsaddr/bootstrap.libp2p.io/ipfs/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa",
 ];
 
 async function createNode() {
@@ -43,7 +43,9 @@ async function createNode() {
 	const listeningAddrs = node.getMultiaddrs();
 	console.log(listeningAddrs);
 
-	node.addEventListener("peer:discovery", (event) => {});
+	node.addEventListener("peer:discovery", (event) => {
+		console.log(event.detail);
+	});
 
 	node.services.pubsub.subscribe("fruit");
 	node.services.pubsub.publish("fruit", "banana");
@@ -51,8 +53,6 @@ async function createNode() {
 	node.services.pubsub.addEventListener("message", (event) => {
 		console.log(event.detail.topic, event.detail.data);
 	});
-
-	await node.stop();
 }
 
 createNode();

@@ -14,6 +14,7 @@
 		"@chainsafe/libp2p-gossipsub": "^11.0.1",
 		"@chainsafe/libp2p-noise": "^14.1.0",
 		"@libp2p/bootstrap": "^10.0.7",
+		"@libp2p/delegated-peer-routing": "^4.0.14",
 		"@libp2p/kad-dht": "^11.0.7",
 		"@libp2p/mplex": "^10.0.7",
 		"@libp2p/peer-id": "^4.0.2",
