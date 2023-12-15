@@ -20,6 +20,7 @@
 		"@libp2p/peer-id": "^4.0.2",
 		"@libp2p/webrtc": "^4.0.10",
 		"@libp2p/websockets": "^8.0.7",
+		"kubo-rpc-client": "^3.0.2",
 		"libp2p": "^1.0.10"
 	}
 }
